@@ -1,3 +1,45 @@
 body {
   margin: 0;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.plp-hero {
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(24, 34, 71);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+
+  > .container {
+    padding: 0 20px;
+
+    h1 {
+      font-size: 4em;
+      color: rgb(231, 44, 75);
+      text-align: center;
+      margin: 0;
+
+      @media (max-width: 767px) {
+        font-size: 3em;
+      }
+    }
+
+    p {
+      margin: 1em 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
