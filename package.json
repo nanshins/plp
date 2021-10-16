@@ -1,0 +1,43 @@
+{
+  "name": "parcel-lp",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanshins/plp.git"
+  },
+  "license": "MIT",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "lint:ci": "eslint 'src/**/*.{js,ts,tsx,jsx,json}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,ts,tsx,jsx,json}'",
+    "format:ci": "prettier --check 'src/**/*.{js,ts,tsx,jsx,json}'",
+    "format:fix": "prettier --write 'src/**/*.{js,ts,tsx,jsx,json}'",
+    "typecheck:ci": "tsc --noEmit",
+    "dev": "parcel -p 3000",
+    "build": "run-s build:*",
+    "build:web": "parcel build --dist-dir release",
+    "build:reports": "parcel build --dist-dir reports --reporter @parcel/reporter-bundle-analyzer",
+    "serve": "run-p serve:*",
+    "serve:web": "serve release -p 3000",
+    "serve:reports": "serve parcel-bundle-reports -p 3001"
+  },
+  "devDependencies": {
+    "@parcel/reporter-bundle-analyzer": "^2.0.0",
+    "@parcel/transformer-sass": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.0",
+    "prettier": "^2.3.0",
+    "serve": "^12.0.1",
+    "typescript": "^4.4.3"
+  }
+}
